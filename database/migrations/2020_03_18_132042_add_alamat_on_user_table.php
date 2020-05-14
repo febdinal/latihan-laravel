@@ -13,12 +13,13 @@ class AddAlamatOnUserTable extends Migration
      */
     public function up()
     {
+       if (Schema::hasColumn('alamat_toko', 'tlp_toko', 'pemilik_toko')){
         Schema::table('tokos', function (Blueprint $table){
-            //
         $table->string('alamat_toko')->nullable()->after('nama_toko');
         $table->integer('tlp_toko')->nullable()->after('alamat_toko');
         $table->string('pemilik_toko')->nullable()->after('tlp_toko');
         });
+        }
     }
 
     /**

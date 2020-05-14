@@ -13,4 +13,5 @@ class Toko extends Model
     {
         return $this->hasMany(Barang::class, 'id_toko', 'nama_toko','alamat_toko','tlp_toko','pemilik_toko');
     }
+    public $timestamps = false ;
 }
