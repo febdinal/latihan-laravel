@@ -51,3 +51,6 @@ Route::get('/Barang/edit/{id}', 'BarangController@edit')
 Route::post('/Barang/Update', 'BarangController@update');
 
 Route::get('/Barang/Banyak/Barang/hapus/{id}', 'BarangController@hapus');
+
+Route::get('/Toko/Tambah/{id}', 'TokoController@Tambah')
+    ->name('tambah');
