@@ -54,18 +54,24 @@ class TokoController extends Controller
 	]);
 	return redirect(route('tampil.toko'));
     }
-    public function Tambah($id)
+
+    public function tambah($id)
     {
-	     Toko::find($id);
-	     return redirect(route('TambahBarang'));
-                    
- 
+        $toko = Toko::find($id);
+        
+	    return view('TambahBarang', compact('toko'));
     }
+
     public function hapus($id)
     {
         Toko::find($id)->delete();
     
         return redirect(route('tampil.toko'));
     }
+
+    public function kembali()
+    {
+        return redirect(route('tampil.toko'));
+    } 
 
 }

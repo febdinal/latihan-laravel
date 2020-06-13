@@ -33,7 +33,7 @@
                             <td> {{ $SatuToko->tlp_toko }} </td>
                             <td> {{ $SatuToko->pemilik_toko }} </td>
                            <td> <a class="btn btn-danger" href="/Toko/edit/{{ $SatuToko->id }}">Edit</a></td>
-                           <td> <a class="btn btn-danger" href="/Toko/lihat/{{ $SatuToko->id }}">Tambah Barang</a></td>
+                           <td> <a class="btn btn-danger" href="/Toko/Tambah/{{ $SatuToko->id }}">+ Barang</a></td>
                            <td><a class="btn btn-danger" href="/Toko/Banyak/Toko/hapus/{{ $SatuToko->id }}">Hapus</a></td>
                         </tr>
                     </form>

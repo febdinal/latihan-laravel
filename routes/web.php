@@ -52,5 +52,11 @@ Route::post('/Barang/Update', 'BarangController@update');
 
 Route::get('/Barang/Banyak/Barang/hapus/{id}', 'BarangController@hapus');
 
-Route::get('/Toko/Tambah/{id}', 'TokoController@Tambah')
-    ->name('tambah');
+Route::get('/Toko/Tambah/{id}', 'TokoController@tambah')
+    ->name('show.tambah.barang');
+
+Route::post('/Barang/tambah', 'BarangController@tambah')
+    ->name('tambah.barang');
+
+Route::get('/Barang/baru/{id}', 'BarangController@Barbaru')
+    ->name('barang.baru');

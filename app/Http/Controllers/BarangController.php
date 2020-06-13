@@ -11,14 +11,6 @@ class BarangController extends Controller
     public function BarangToko(Request $request)
     {
         $BanyakBarang = Barang::all();
-        $Barang = Barang::create([
-            'id_toko' => $request->id_toko,
-            'nama_barang' => $request->nama_barang,
-            'jenis_barang' => $request->jenis_barang,
-            'jumlah_barang' => $request->jumlah_barang,
-        
-        
-        ]);
         return view('BarangSatuan', compact('BanyakBarang'));
     }
     public function FormBarangToko()
@@ -46,10 +38,29 @@ class BarangController extends Controller
 	]);
 	return redirect(route('tampil.barang'));
     }
+
     public function hapus($id)
     {
         Barang::where('id',$id)->delete();
         
         return redirect(route('tampil.barang'));
     }
+
+    public function tambah(Request $request)
+    {
+        $Barang = Barang::create([
+            'id_toko' => $request->id_toko,
+            'nama_barang' => $request->nama_barang,
+            'jenis_barang' => $request->jenis_barang,
+            'jumlah_barang' => $request->jumlah_barang,        
+        ]);
+        return redirect()->route('show.tambah.barang', [$request->id_toko]);
+    }
+
+    public function BarBaru(Request $request)
+    {
+        $tambahbarang = Barang::where('id',$request->id)->get();
+        return view('BarangBaru', compact('tambahbarang'));
+    }
+
 }
