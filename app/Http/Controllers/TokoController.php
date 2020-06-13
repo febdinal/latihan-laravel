@@ -46,12 +46,18 @@ class TokoController extends Controller
     }
     public function update(Request $request)
     {
-    Toko::where('id',$request->id)->update([
-		'nama_toko' => $request->nama_toko,
-        'alamat_toko' => $request->alamat_toko,
-        'tlp_toko' => $request->tlp_toko,
-        'pemilik_toko' => $request->pemilik_toko,
-	]);
+
+        $toko = Toko::find($request->id_toko)
+            ->update([
+                'nama_toko' => $request->nama_toko,
+                'alamat_toko' => $request->alamat_toko,
+                'tlp_toko' => $request->tlp_toko,
+                'pemilik_toko' => $request->pemilik_toko,
+            ]);
+            
+
+            
+    
 	return redirect(route('tampil.toko'));
     }
 

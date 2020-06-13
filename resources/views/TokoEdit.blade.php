@@ -13,6 +13,9 @@
             <form action="/Toko/Update" method="POST">
                 {{ csrf_field() }}
                 <div class="form-group" >
+                    <input type="hidden" class="form-control" required="required" name="id_toko" value="{{ $SatuToko->id }}">
+                </div>
+                <div class="form-group" >
                     <lable for="nama"> Nama Toko: </lable>
                     <input type="text" class="form-control" required="required" name="nama_toko" value="{{ $SatuToko->nama_toko }}">
                 </div>
