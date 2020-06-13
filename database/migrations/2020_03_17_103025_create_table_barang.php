@@ -13,12 +13,14 @@ class CreateTableBarang extends Migration
      */
     public function up()
     {
+        if (!Schema::hasTable('barangs')){
         Schema::create('barangs', function (Blueprint $table) {
             $table->Increments('id');
             $table->integer('id_toko');
             $table->string('nama_barang');
             $table->timestamps();
         });
+        }
     }
 
     /**

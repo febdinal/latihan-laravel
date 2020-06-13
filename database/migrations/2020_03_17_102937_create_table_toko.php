@@ -13,6 +13,7 @@ class CreateTableToko extends Migration
      */
     public function up()
     {
+        if (!Schema::hasTable('tokos')){
         Schema::create('tokos', function (Blueprint $table) {
             $table->Increments('id');
             $table->string('nama_toko');
@@ -21,6 +22,7 @@ class CreateTableToko extends Migration
             $table->string('pemilik_toko');
            
         });
+        }
     }
 
     /**

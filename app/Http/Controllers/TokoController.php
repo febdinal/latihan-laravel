@@ -16,6 +16,7 @@ class TokoController extends Controller
             'tlp_toko' => $request->tlp_toko,
             'pemilik_toko' => $request->pemilik_toko,
             'edit' => $request->edit,
+            'Lihat' => $request->tambah,
             'hapus' => $request->hapus,
         
         
@@ -53,11 +54,24 @@ class TokoController extends Controller
 	]);
 	return redirect(route('tampil.toko'));
     }
+
+    public function tambah($id)
+    {
+        $toko = Toko::find($id);
+        
+	    return view('TambahBarang', compact('toko'));
+    }
+
     public function hapus($id)
     {
         Toko::find($id)->delete();
     
         return redirect(route('tampil.toko'));
     }
+
+    public function kembali()
+    {
+        return redirect(route('tampil.toko'));
+    } 
 
 }
