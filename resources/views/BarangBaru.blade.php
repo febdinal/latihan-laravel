@@ -16,7 +16,7 @@
                         <td>Nama Barang</td>
                         <td>Jenis Barang</td>
                         <td>Jumlah Barang </td>
-                        <td>Option </td>
+                        <td colspan="3"><center> Option </td>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,7 +26,9 @@
                             <td> {{ $BarBaru->nama_barang }} </td>
                             <td> {{ $BarBaru->jenis_barang }} </td>
                             <td> {{ $BarBaru->jumlah_barang }} </td>
+                            <td> <a class="btn btn-primary" href="/Toko/BarangBaru/edit/{{ $BarBaru->id }}">Edit</a></td>
                             <td> <a class="btn btn-primary" href="{{URL::previous()}}"> Kembali </a></td>
+                            <td> <a class="btn btn-danger" href="/Toko/BarangBaru/hapus/{{ $BarBaru->id }}">Hapus</a></td>
                         </tr>
                     @endforeach
                     

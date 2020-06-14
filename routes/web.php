@@ -58,5 +58,7 @@ Route::get('/Toko/Tambah/{id}', 'TokoController@tambah')
 Route::post('/Barang/tambah', 'BarangController@tambah')
     ->name('tambah.barang');
 
-Route::get('/Barang/baru/{id}', 'BarangController@Barbaru')
+Route::get('/Barang/baru/{id}', 'BarangController@BarBaru')
     ->name('barang.baru');
+
+Route::get('/Toko/BarangBaru/hapus/{id}', 'BarangController@barhapus');

@@ -59,8 +59,15 @@ class BarangController extends Controller
 
     public function BarBaru(Request $request)
     {
-        $tambahbarang = Barang::where('id',$request->id)->get();
+        $tambahbarang = Barang::where('id_toko',$request->id)->get();
         return view('BarangBaru', compact('tambahbarang'));
+    }
+
+    public function barhapus($id)
+    {
+        Barang::find($id)->delete();
+        
+        return redirect()->route('show.barang.baru', [$request->id_toko]);
     }
 
 }

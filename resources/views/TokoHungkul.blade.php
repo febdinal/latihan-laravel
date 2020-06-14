@@ -5,12 +5,12 @@
 
         <title>Check Toko Sebelah</title>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('js/app.js') }}"> 
+        <link rel="stylesheet" href="{{ asset('js/app.js') }}">
     </head>
     <body>     
         <div class="container">
         <h2> Tampil </h2>
-            <table class="table">
+            <table class="table" > 
                 <thead>
                     <tr> 
                         <td>ID</td>
