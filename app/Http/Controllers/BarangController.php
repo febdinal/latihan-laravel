@@ -67,7 +67,22 @@ class BarangController extends Controller
     {
         Barang::find($id)->delete();
         
-        return redirect()->route('show.barang.baru', [$request->id_toko]);
+        return redirect(route('tampil.toko'));
     }
 
+    public function BarBaruEdit($id)
+    {
+        $BarBaru = Barang::find($id);
+        return view('BarBaruEdit', compact('BarBaru'));
+    }
+    
+    public function BarBarUpdate(Request $request)
+{
+	Barang::find($request->id_toko)->update([
+		'nama_barang' => $request->nama_barang,
+		'jenis_barang' => $request->jenis_barang,
+		'jumlah_barang' => $request->jumlah_barang
+	]);
+	return redirect(route('tampil.toko'));
+    }
 }

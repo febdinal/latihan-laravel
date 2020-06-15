@@ -62,3 +62,8 @@ Route::get('/Barang/baru/{id}', 'BarangController@BarBaru')
     ->name('barang.baru');
 
 Route::get('/Toko/BarangBaru/hapus/{id}', 'BarangController@barhapus');
+
+Route::get('/Toko/BarangBaru/Edit/{id}', 'BarangController@BarBaruEdit')
+    ->name('BarEdit');
+
+Route::post('/Toko/BarangBaru/Update', 'BarangController@BarBarUpdate');

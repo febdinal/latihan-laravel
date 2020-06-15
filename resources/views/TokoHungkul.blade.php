@@ -6,6 +6,7 @@
         <title>Check Toko Sebelah</title>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('js/app.js') }}">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>     
         <div class="container">
